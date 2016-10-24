@@ -1,0 +1,12 @@
+<h2>{{ vm.customer.name }}'s Orders</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Product</th>
+        <th>Total</th>
+    </tr>
+    <tr ng-repeat="order in vm.customer.orders" class="repeat-animation">
+        <td>{{ order.product}}</td>
+        <td>{{ order.total | currency }}</td>
+    </tr>
+</table>
