@@ -4,6 +4,14 @@
 
     function CustomersController(CustomersFactory, appSettings, $window, $log) {
         var vm = this;
+        
+        vm.currentPage = 1;
+        vm.totalPages = 3;
+        
+        vm.doWork = function() {
+            console.log('hello');
+            vm.currentPage++;
+        }
 
         vm.appSettings = appSettings;
         vm.sortBy = 'name';

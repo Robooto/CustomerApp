@@ -20,9 +20,9 @@ Filter: <input type="text" ng-model="vm.customerFilter.name" />
     </tr>
 </table>
 <br />
-<span>Total customers: {{ vm.customers.length }}</span>
+<span ng-click="vm.doWork()">Total customers: {{ vm.customers.length }}</span>
 <br><br>
-<dir-paginate></dir-paginate>
+<dir-paginate current-page="vm.currentPage" total-pages="vm.totalPages" pageinate="vm.doWork()"></dir-paginate>
 <footer>
     Version {{ vm.appSettings.version}}
     <br>
