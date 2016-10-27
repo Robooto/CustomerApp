@@ -1,6 +1,10 @@
 <h2>{{vm.appSettings.title}}</h2>
 Filter: <input type="text" ng-model="vm.customerFilter.name" />
 <br /><br />
+
+<table-helper 
+              ng-Model="vm.customers"
+              columnmap="[{name: 'Name'}, {city: 'City'}, {orderTotal: 'Order Total'}, {joined: 'Joined'}]"></table-helper>
 <table class="table table-striped">
     <tr>
         <th ng-click="vm.doSort('name')">Name</th>
@@ -20,9 +24,8 @@ Filter: <input type="text" ng-model="vm.customerFilter.name" />
     </tr>
 </table>
 <br />
-<span ng-click="vm.doWork()">Total customers: {{ vm.customers.length }}</span>
+<span link-demo ng-click="vm.doWork()">Total customers: {{ vm.customers.length }}</span>
 <br><br>
-<dir-paginate current-page="vm.currentPage" total-pages="vm.totalPages" pageinate="vm.doWork()"></dir-paginate>
 <footer>
     Version {{ vm.appSettings.version}}
     <br>
